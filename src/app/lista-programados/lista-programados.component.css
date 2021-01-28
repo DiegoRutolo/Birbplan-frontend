@@ -1,0 +1,28 @@
+li {
+    width: 20em;
+    list-style-type: none;
+    margin: 2ex;
+    padding: 1ex;
+    overflow: hidden;
+    /* border: 3px red dashed; */
+}
+
+li .marca {
+    border: 3px solid MediumSlateBlue;
+    border-radius: 10px;
+    padding: 0.5ex;
+    background-color: lavender;
+    font-weight: bold;
+    color: DarkSlateGray;
+}
+
+li .descr {
+    margin-left: 1ex;
+}
+
+li .editButton {
+    padding: 0.4ex;
+    float: right;
+    margin: 0;
+    vertical-align: middle;
+}

@@ -1,0 +1,33 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+    margin: auto;
+    border: 1px solid red;
+}
+
+h1 {
+    font-size: 300%;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.barraBotones {
+    display: flex;
+}
+
+button {
+    min-width: 7ex;
+    min-height: 5ex;
+    font-size: large;
+    vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 3em;
+}
+
+button:hover {
+    background-color: Gainsboro;
+}

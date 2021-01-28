@@ -1,7 +1,9 @@
 <div>
     <ul>
         <li *ngFor="let tweet of tweets">
-            <span class="Marca">{{tweet.getTextoResumen()}}</span> {{tweet.txt}}
+            <span class="marca">{{tweet.getTextoResumen()}}</span> 
+            <span class="descr">{{tweet.txt}}</span> 
+            <button class="editButton"><img src="../../assets/ic_action_edit.png"></button>
         </li>
     </ul>
 </div>
