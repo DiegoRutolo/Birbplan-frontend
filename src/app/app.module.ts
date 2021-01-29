@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { TweetProgramadoPreviewComponent } from './tweet-programado-preview/tweet-programado-preview.component';
@@ -20,7 +21,8 @@ import { DetallesTipoTweetComponent } from './detalles-tipo-tweet/detalles-tipo-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

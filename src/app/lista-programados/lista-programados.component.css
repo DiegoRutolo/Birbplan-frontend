@@ -25,4 +25,31 @@ li .editButton {
     float: right;
     margin: 0;
     vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+li .editButton:hover {
+    background-color: Gainsboro;
+}
+
+.barraBotones {
+    display: flex;
+    justify-content: center;
+}
+
+.barraBotones a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7ex;
+    min-height: 5ex;
+    font-size: large;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 3em;
+}
+
+.barraBotones a:hover {
+    background-color: Gainsboro;
 }

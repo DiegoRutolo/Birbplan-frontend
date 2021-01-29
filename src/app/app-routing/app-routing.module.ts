@@ -7,7 +7,7 @@ import { DetallesTweetComponent } from "../detalles-tweet/detalles-tweet.compone
 const routes: Routes = [
   {path: '', redirectTo: '/lista', pathMatch: 'full'},
   {path: 'lista', component: ListaProgramadosComponent},
-  {path: 'detalles/new', component: DetallesTweetComponent},
+  {path: 'detalles', component: DetallesTweetComponent},
   {path: 'detalles/:id', component: DetallesTweetComponent}
 ]
 

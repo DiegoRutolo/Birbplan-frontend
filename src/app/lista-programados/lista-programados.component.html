@@ -3,7 +3,14 @@
         <li *ngFor="let tweet of tweets">
             <span class="marca">{{tweet.getTextoResumen()}}</span> 
             <span class="descr">{{tweet.txt}}</span> 
-            <button class="editButton"><img src="../../assets/ic_action_edit.png"></button>
+            <a [routerLink]="['/detalles', tweet.id]" class="editButton"><img src="../../assets/ic_action_edit.png"></a>
         </li>
     </ul>
+
+    <div class="barraBotones">
+        <a class="botonBrand">Brand</a>
+        <a routerLink="/detalles" class="botonMas">
+            <img src="../assets/ic_action_add.png">
+        </a>
+    </div>
 </div>

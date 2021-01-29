@@ -1,1 +1,22 @@
-<p>detalles-tweet works!</p>
+<div class="contenedor">
+    <h2>Detalles de Tweet programado</h2>
+    <p>{{tweet.txt}}</p>
+    <label>
+        Texto del tweet: <br>
+        <input [(ngModel)]="tweet.txt" type=textbox name="txtTweet" />
+    </label>
+    <label>
+        <input type="checkbox" name="chkLink"> Link
+    </label>
+    <label>
+        <input type="checkbox" name="chkFoto"> Foto
+    </label>
+    <label>
+        <input type="number" name="numHashtag" default="0" min="0"> Hashtags
+    </label>
+    <app-detalles-tipo-tweet></app-detalles-tipo-tweet>
+    <div class="barraBotones">
+        <a routerLink="/lista">Atras</a>
+        <a>Guardar</a>
+    </div>
+</div>
