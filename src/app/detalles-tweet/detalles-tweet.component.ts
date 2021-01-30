@@ -24,7 +24,13 @@ export class DetallesTweetComponent implements OnInit {
     if (id) {
       // cargar el tweet
       this.tweetService.getTweet(Number(id)).subscribe(tweet => this.tweet = tweet);
+    } else {
+      this.tweet = new Tweet();
     }
+  }
+
+  guardarTweet(): void {
+    console.log(this.tweet);
   }
 
 }

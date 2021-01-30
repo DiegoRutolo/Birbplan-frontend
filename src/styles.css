@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.barraBotones {
+    display: flex;
+    justify-content: center;
+}
+
+.barraBotones .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7ex;
+    min-height: 5ex;
+    font-size: large;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 3em;
+    text-decoration: none;
+    color: black;
+    background-color: WhiteSmoke;
+    cursor: pointer;
+}
+
+.barraBotones .boton:hover {
+    background-color: Gainsboro;
+}

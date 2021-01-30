@@ -18,10 +18,10 @@ export class Tweet {
     diaSemana: DiaSemana;
 
     constructor(
-            id: number, txt: string, links: string[], numeroLinks: number,
-            hashtags: string[], numeroHashtags: number, fotos: string[],
-            numeroFotos: number, tipo: TipoTweet, fecha: Date, hora: number,
-            diaSemana: DiaSemana
+            id?: number, txt?: string, links?: string[], numeroLinks?: number,
+            hashtags?: string[], numeroHashtags?: number, fotos?: string[],
+            numeroFotos?: number, tipo?: TipoTweet, fecha?: Date, hora?: number,
+            diaSemana?: DiaSemana
         ) {
         this.id = id;
         this.txt = txt;

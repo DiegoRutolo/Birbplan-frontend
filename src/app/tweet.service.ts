@@ -18,4 +18,8 @@ export class TweetService {
   getTweet(id: number): Observable<Tweet> {
     return of(TWEETS_FALSOS.find(tweet => tweet.id === id));
   }
+
+  saveTweeet(tweet: Tweet): void {
+    
+  }
 }
