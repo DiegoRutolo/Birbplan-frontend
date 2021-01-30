@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { TweetProgramadoPreviewComponent } from './tweet-programado-preview/tweet-programado-preview.component';
@@ -9,6 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrandingComponent } from './branding/branding.component';
 import { DetallesTweetComponent } from './detalles-tweet/detalles-tweet.component';
 import { DetallesTipoTweetComponent } from './detalles-tipo-tweet/detalles-tipo-tweet.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { DetallesTipoTweetComponent } from './detalles-tipo-tweet/detalles-tipo-
     ListaProgramadosComponent,
     BrandingComponent,
     DetallesTweetComponent,
-    DetallesTipoTweetComponent
+    DetallesTipoTweetComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
