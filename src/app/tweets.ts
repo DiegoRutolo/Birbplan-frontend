@@ -1,5 +1,3 @@
-import { decimalDigest } from "@angular/compiler/src/i18n/digest";
-
 import { TipoTweet } from "./tipo-tweet.enum";
 import { DiaSemana } from "./dia-semana.enum";
 
@@ -48,16 +46,37 @@ export class Tweet {
                 return `${this.fecha}`;
             
             case TipoTweet.Diario:
-                return `${this.hora} ${this.fecha}`
+                return `${this.hora} ${this.fecha}`;
         
             case TipoTweet.Semanal:
                 return `${this.diaSemana} ${this.hora}`;
             
             case TipoTweet.Mensual:
-                return `${this.fecha.getDate().toString()} ${this.hora}`
-            
+                return `${this.fecha.getDate().toString()} ${this.hora}`;
             default:
-                return "error¿?";
+                this.tipo = TipoTweet.Inactivo;
+                return "Inactivo";
         }
+    }
+
+    get hasLink(): boolean {
+        return this.numeroLinks > 0;
+    }
+    set hasLink(val: boolean) {
+        this.numeroLinks = val? 1 : 0;
+    }
+
+    get hasFoto(): boolean {
+        return this.numeroFotos > 0;
+    }
+    set hasFoto(val: boolean) {
+        this.numeroFotos = val? 1 : 0;
+    }
+
+    get numHashtag(): number {
+        return this.numeroHashtags;
+    }
+    set numHashtag(val: number) {
+        this.numeroHashtags = Math.max(0, val);
     }
 }

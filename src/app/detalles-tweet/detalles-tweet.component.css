@@ -18,6 +18,8 @@ a {
     border: 3px solid black;
     border-radius: 20px;
     margin: 3em;
+    text-decoration: none;
+    color: black;
 }
 
 a:hover {

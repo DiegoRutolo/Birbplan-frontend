@@ -1,18 +1,20 @@
 <div class="contenedor">
     <h2>Detalles de Tweet programado</h2>
-    <p>{{tweet.txt}}</p>
     <label>
         Texto del tweet: <br>
-        <input [(ngModel)]="tweet.txt" type=textbox name="txtTweet" />
+        <input type=textbox name="txtTweet" [(ngModel)]="tweet.txt" />
     </label>
     <label>
-        <input type="checkbox" name="chkLink"> Link
+        <input type="checkbox" name="chkLink" 
+            [checked]="tweet.hasLink" (change)="tweet.hasLink = !tweet.hasLink" /> Link
     </label>
     <label>
-        <input type="checkbox" name="chkFoto"> Foto
+        <input type="checkbox" name="chkFoto" 
+            [checked]="tweet.hasFoto" (change)="tweet.hasFoto = !tweet.hasFoto" /> Foto
     </label>
     <label>
-        <input type="number" name="numHashtag" default="0" min="0"> Hashtags
+        <input type="number" name="numHashtag"
+            default="0" min="0" [(ngModel)]="tweet.numeroHashtags" /> Hashtags
     </label>
     <app-detalles-tipo-tweet></app-detalles-tipo-tweet>
     <div class="barraBotones">

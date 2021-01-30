@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Observable } from "rxjs";
 
 import { Tweet } from "../tweets";
+import { TweetService } from "../tweet.service";
 
 @Component({
   selector: 'app-detalles-tweet',
@@ -9,11 +12,19 @@ import { Tweet } from "../tweets";
 })
 export class DetallesTweetComponent implements OnInit {
 
-  @Input() tweet: Tweet;
+  tweet: Tweet;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute, private router: Router,
+    private tweetService: TweetService
+    ) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      // cargar el tweet
+      this.tweetService.getTweet(Number(id)).subscribe(tweet => this.tweet = tweet);
+    }
   }
 
 }
