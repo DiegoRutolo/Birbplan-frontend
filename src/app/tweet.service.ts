@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { TWEETS_FALSOS } from "./tweets-falsos";
 import { Tweet } from "./tweets";
+import { TipoTweet } from './tipo-tweet.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,43 @@ export class TweetService {
     return of(TWEETS_FALSOS.find(tweet => tweet.id === id));
   }
 
-  saveTweeet(tweet: Tweet): void {
-    
+  getNextId(): number {
+    //TODO: Esto es hacer trampa, luego hay que arreglarlo
+    return Math.max(...TWEETS_FALSOS.map(tweet => tweet.id)) + 1;
+  }
+
+  reasignarNulo(campo, valorNulo) {
+    if (campo === null || campo === undefined) {
+      return valorNulo;
+    } else {
+      return campo;
+    }
+  }
+
+  saveTweet(tweet: Tweet): void {
+    let flag_nuevoTweet = tweet.id === null || tweet.id === undefined ? true : false;
+    // Completamos los datos que faltan
+    tweet.id = this.reasignarNulo(tweet.id, this.getNextId());
+    tweet.txt = this.reasignarNulo(tweet.txt, "");
+    tweet.links = this.reasignarNulo(tweet.links, []);
+    tweet.hashtags = this.reasignarNulo(tweet.hashtags, []);
+    tweet.fotos = this.reasignarNulo(tweet.fotos, []);
+    tweet.tipo = this.reasignarNulo(tweet.tipo, TipoTweet.Inactivo);
+    // Guardamos o actualizamos
+    if (flag_nuevoTweet) {
+      this.postTweet(tweet);
+    } else {
+      this.updateTweet(tweet);
+    }
+  }
+
+  postTweet(tweet: Tweet): void {
+    TWEETS_FALSOS.push(tweet);
+  }
+
+  updateTweet(tweetNuevo: Tweet): void {
+    TWEETS_FALSOS[TWEETS_FALSOS.indexOf(TWEETS_FALSOS.find(tweetViejo => tweetViejo.id === tweetNuevo.id))] = tweetNuevo;
+    // Pffffff...
   }
 
   getPrueba(): void {

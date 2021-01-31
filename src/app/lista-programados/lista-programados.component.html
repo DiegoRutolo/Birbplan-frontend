@@ -3,6 +3,7 @@
         <li *ngFor="let tweet of tweets">
             <span class="marca">{{tweet.getTextoResumen()}}</span> 
             <span class="descr">{{tweet.txt}}</span> 
+            <button (click)="debugVer(tweet)">debug</button>
             <a [routerLink]="['/detalles', tweet.id]" class="editButton"><img src="../../assets/ic_action_edit.png"></a>
         </li>
     </ul>

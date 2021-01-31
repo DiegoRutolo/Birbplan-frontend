@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TweetService } from "../tweet.service";
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,10 +7,16 @@ import { TweetService } from "../tweet.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private tweetService: TweetService) { }
+  private urlPruebas = "http://talos.rutolo.eu:3000/authorize";
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.tweetService.getPrueba();
+    this.redirigir();
+  }
+
+  redirigir(): void {
+    window.location.href = this.urlPruebas;
   }
 
 }

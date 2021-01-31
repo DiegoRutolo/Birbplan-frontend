@@ -30,7 +30,7 @@ export class DetallesTweetComponent implements OnInit {
   }
 
   guardarTweet(): void {
-    console.log(this.tweet);
+    this.tweetService.saveTweet(this.tweet);
   }
 
 }

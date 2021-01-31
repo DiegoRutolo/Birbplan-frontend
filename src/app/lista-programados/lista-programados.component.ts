@@ -22,4 +22,8 @@ export class ListaProgramadosComponent implements OnInit {
     this.tweetService.getTweets().subscribe(tweets => this.tweets = tweets);
   }
 
+  debugVer(val): void {
+    console.log(val);
+  }
+
 }
