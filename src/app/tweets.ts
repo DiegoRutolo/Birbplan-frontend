@@ -5,12 +5,9 @@ export class Tweet {
     id: number;
 
     txt: string;
-    links: string[];
     numeroLinks: number;
-    hashtags: string[];
-    numeroHashtags: number;
-    fotos: string[];    // De momento asumo que está en base64
     numeroFotos: number;
+    numeroHashtags: number;
 
     tipo: TipoTweet;
     fecha: Date;    // De aqui se puede sacar día del mes o fecha completa
@@ -18,18 +15,15 @@ export class Tweet {
     diaSemana: DiaSemana;
 
     constructor(
-            id?: number, txt?: string, links?: string[], numeroLinks?: number,
-            hashtags?: string[], numeroHashtags?: number, fotos?: string[],
-            numeroFotos?: number, tipo?: TipoTweet, fecha?: Date, hora?: number,
+            id?: number, txt?: string, numeroLinks?: number,
+            numeroHashtags?: number, numeroFotos?: number,
+            tipo?: TipoTweet, fecha?: Date, hora?: number,
             diaSemana?: DiaSemana
         ) {
         this.id = id;
         this.txt = txt;
-        this.links = links;
         this.numeroLinks = numeroLinks;
-        this.hashtags = hashtags;
         this.numeroHashtags = numeroHashtags;
-        this.fotos = fotos;
         this.numeroFotos = numeroFotos;
         this.tipo = tipo;
         this.fecha = fecha;

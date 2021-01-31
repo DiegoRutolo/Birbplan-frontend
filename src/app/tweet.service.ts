@@ -41,9 +41,6 @@ export class TweetService {
     // Completamos los datos que faltan
     tweet.id = this.reasignarNulo(tweet.id, this.getNextId());
     tweet.txt = this.reasignarNulo(tweet.txt, "");
-    tweet.links = this.reasignarNulo(tweet.links, []);
-    tweet.hashtags = this.reasignarNulo(tweet.hashtags, []);
-    tweet.fotos = this.reasignarNulo(tweet.fotos, []);
     tweet.tipo = this.reasignarNulo(tweet.tipo, TipoTweet.Inactivo);
     // Guardamos o actualizamos
     if (flag_nuevoTweet) {
