@@ -11,6 +11,7 @@ import { BrandingComponent } from './branding/branding.component';
 import { DetallesTweetComponent } from './detalles-tweet/detalles-tweet.component';
 import { DetallesTipoTweetComponent } from './detalles-tipo-tweet/detalles-tipo-tweet.component';
 import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     BrandingComponent,
     DetallesTweetComponent,
     DetallesTipoTweetComponent,
-    LoginComponent
+    LoginComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
