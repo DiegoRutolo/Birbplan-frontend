@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TipoTweet } from "../tipo-tweet.enum";
+import { DiaSemana } from "../dia-semana.enum";
 
 @Component({
   selector: 'app-detalles-tipo-tweet',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallesTipoTweetComponent implements OnInit {
 
-  constructor() { }
+  eTipoTweet = TipoTweet;
+  eDiaSemana = DiaSemana;
+  opcionSeleccionada: TipoTweet;
+
+  fecha;
+  hora;
+  diaSemana: DiaSemana;
+  
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
+    // Valores por defecto
+    this.opcionSeleccionada = TipoTweet.Inactivo;
+    this.diaSemana = DiaSemana.Lunes;
   }
 
 }
