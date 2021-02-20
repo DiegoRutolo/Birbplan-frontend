@@ -60,6 +60,7 @@ export class TweetService {
   }
 
   getPrueba(): void {
-    console.log(this.http.get(this.urlPruebas));
+    //console.log(this.http.get(this.urlPruebas));
+    console.log("Prueba");
   }
 }
