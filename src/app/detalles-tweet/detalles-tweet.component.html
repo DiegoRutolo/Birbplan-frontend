@@ -16,7 +16,53 @@
         <input type="number" name="numHashtag"
             default="0" min="0" [(ngModel)]="tweet.numeroHashtags" /> Hashtags
     </label>
-    <app-detalles-tipo-tweet (eInfoTipoTweet)="updateInfoTipoTweet($event)"></app-detalles-tipo-tweet>
+
+    <div class="contenedor">
+        <h3>Cuándo se publica</h3>
+        <label>
+            Tipo
+            <select [(ngModel)]="tweet.tipo">
+                <option [ngValue]="eTipoTweet.Inactivo">Inactivo</option>
+                <option [ngValue]="eTipoTweet.Unico">Único</option>
+                <option [ngValue]="eTipoTweet.Diario">Diario</option>
+                <option [ngValue]="eTipoTweet.Semanal">Semanal</option>
+                <option [ngValue]="eTipoTweet.Mensual">Mensual</option>
+            </select>
+        </label>
+    
+        <div [ngSwitch]="tweet.tipo">
+            <div *ngSwitchCase="eTipoTweet.Inactivo">
+                <p>Inactivo</p>
+            </div>
+            <div *ngSwitchCase="eTipoTweet.Unico">
+                <p>Unico</p>
+                <input type="datetime-local" [(ngModel)]="tweet.fecha">
+            </div>
+            <div *ngSwitchCase="eTipoTweet.Diario">
+                <p>Diario</p>
+                <input type="time" value="00:00" [(ngModel)]="tweet.hora">
+            </div>
+            <div *ngSwitchCase="eTipoTweet.Semanal">
+                <p>Semanal</p>
+                <select [(ngModel)]="tweet.diaSemana">
+                    <option [ngValue]="eDiaSemana.Lunes">Lunes</option>
+                    <option [ngValue]="eDiaSemana.Martes">Martes</option>
+                    <option [ngValue]="eDiaSemana.Miercoles">Miércoles</option>
+                    <option [ngValue]="eDiaSemana.Jueves">Jueves</option>
+                    <option [ngValue]="eDiaSemana.Viernes">Viernes</option>
+                    <option [ngValue]="eDiaSemana.Sabado">Sábado</option>
+                    <option [ngValue]="eDiaSemana.Domingo">Domingo</option>
+                </select>
+                <input type="time" value="00:00" [(ngModel)]="tweet.hora">
+            </div>
+            <div *ngSwitchCase="eTipoTweet.Mensual">
+                <p>Mensual</p>
+                <input type="number" min="1" max="31" value="1" [(ngModel)]="tweet.diaMes">
+                <input type="time" value="00:00" [(ngModel)]="tweet.hora">
+            </div>
+        </div>
+    </div>
+
     <div class="barraBotones">
         <a class="boton" routerLink="/lista">Atras</a>
         <button class="boton" (click)="guardarTweet()">Guardar</button>

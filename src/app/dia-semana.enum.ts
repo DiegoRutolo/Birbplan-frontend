@@ -1,9 +1,9 @@
 export enum DiaSemana {
-    Lunes,
-    Martes,
-    Miercoles,
-    Jueves,
-    Viernes,
-    Sabado,
-    Domingo
+    Lunes = 'Lunes',
+    Martes = 'Martes',
+    Miercoles = 'Miercoles',
+    Jueves = 'Jueves',
+    Viernes = 'Viernes',
+    Sabado = 'Sabado',
+    Domingo = 'Domingo'
 }

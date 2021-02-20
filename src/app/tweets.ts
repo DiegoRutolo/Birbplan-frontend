@@ -10,8 +10,9 @@ export class Tweet {
     numeroHashtags: number;
 
     tipo: TipoTweet;
-    fecha: Date;    // De aqui se puede sacar día del mes o fecha completa
-    hora: string;    // Como se guarda solo la hora?
+    fecha: Date;        // Para la fecha completa
+    hora: string;       // Como se guarda solo la hora?
+    diaMes: number;     // 1-31. Ya decidirá el backend qué hacer con el 31 de Febrero.
     diaSemana: DiaSemana;
 
     constructor(

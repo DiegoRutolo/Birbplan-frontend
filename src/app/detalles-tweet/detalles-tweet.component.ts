@@ -5,6 +5,8 @@ import { Observable } from "rxjs";
 import { Tweet } from "../tweets";
 import { TweetService } from "../tweet.service";
 import { InfoTipoTweet } from "../info-tipo-tweet";
+import { TipoTweet } from '../tipo-tweet.enum';
+import { DiaSemana } from '../dia-semana.enum';
 
 @Component({
   selector: 'app-detalles-tweet',
@@ -14,6 +16,8 @@ import { InfoTipoTweet } from "../info-tipo-tweet";
 export class DetallesTweetComponent implements OnInit {
 
   tweet: Tweet;
+  eTipoTweet = TipoTweet;
+  eDiaSemana = DiaSemana;
 
   constructor(
     private route: ActivatedRoute, private router: Router,
@@ -28,13 +32,6 @@ export class DetallesTweetComponent implements OnInit {
     } else {
       this.tweet = new Tweet();
     }
-  }
-
-  updateInfoTipoTweet(info: InfoTipoTweet) {
-    this.tweet.tipo = info.tipo;
-    this.tweet.fecha = info.fecha;
-    this.tweet.hora = info.hora;
-    this.tweet.diaSemana = info.diaSemana;
   }
 
   guardarTweet(): void {
