@@ -11,13 +11,13 @@ export class Tweet {
 
     tipo: TipoTweet;
     fecha: Date;    // De aqui se puede sacar día del mes o fecha completa
-    hora: number;    // Como se guarda solo la hora?
+    hora: string;    // Como se guarda solo la hora?
     diaSemana: DiaSemana;
 
     constructor(
             id?: number, txt?: string, numeroLinks?: number,
             numeroHashtags?: number, numeroFotos?: number,
-            tipo?: TipoTweet, fecha?: Date, hora?: number,
+            tipo?: TipoTweet, fecha?: Date, hora?: string,
             diaSemana?: DiaSemana
         ) {
         this.id = id;
@@ -40,7 +40,7 @@ export class Tweet {
                 return `${this.fecha}`;
             
             case TipoTweet.Diario:
-                return `${this.hora} ${this.fecha}`;
+                return `${this.hora}`;
         
             case TipoTweet.Semanal:
                 return `${this.diaSemana} ${this.hora}`;

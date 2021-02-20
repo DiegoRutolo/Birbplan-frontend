@@ -16,7 +16,7 @@
         <input type="number" name="numHashtag"
             default="0" min="0" [(ngModel)]="tweet.numeroHashtags" /> Hashtags
     </label>
-    <app-detalles-tipo-tweet></app-detalles-tipo-tweet>
+    <app-detalles-tipo-tweet (eInfoTipoTweet)="updateInfoTipoTweet($event)"></app-detalles-tipo-tweet>
     <div class="barraBotones">
         <a class="boton" routerLink="/lista">Atras</a>
         <button class="boton" (click)="guardarTweet()">Guardar</button>

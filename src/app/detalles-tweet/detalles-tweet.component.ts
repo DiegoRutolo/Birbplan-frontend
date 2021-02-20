@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 
 import { Tweet } from "../tweets";
 import { TweetService } from "../tweet.service";
+import { InfoTipoTweet } from "../info-tipo-tweet";
 
 @Component({
   selector: 'app-detalles-tweet',
@@ -27,6 +28,13 @@ export class DetallesTweetComponent implements OnInit {
     } else {
       this.tweet = new Tweet();
     }
+  }
+
+  updateInfoTipoTweet(info: InfoTipoTweet) {
+    this.tweet.tipo = info.tipo;
+    this.tweet.fecha = info.fecha;
+    this.tweet.hora = info.hora;
+    this.tweet.diaSemana = info.diaSemana;
   }
 
   guardarTweet(): void {

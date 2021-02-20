@@ -2,7 +2,7 @@
     <h3>Cuándo se publica</h3>
     <label>
         Tipo
-        <select [(ngModel)]="opcionSeleccionada">
+        <select [(ngModel)]="opcionSeleccionada" (change)="updateInfo()">
             <option [ngValue]="eTipoTweet.Inactivo">Inactivo</option>
             <option [ngValue]="eTipoTweet.Unico">Único</option>
             <option [ngValue]="eTipoTweet.Diario">Diario</option>
@@ -17,15 +17,15 @@
         </div>
         <div *ngSwitchCase="eTipoTweet.Unico">
             <p>Unico</p>
-            <input type="datetime-local" [(ngModel)]="fecha">
+            <input type="datetime-local" [(ngModel)]="fecha" (change)="updateInfo()">
         </div>
         <div *ngSwitchCase="eTipoTweet.Diario">
             <p>Diario</p>
-            <input type="time" value="00:00" [(ngModel)]="hora">
+            <input type="time" value="00:00" [(ngModel)]="hora" (change)="updateInfo()">
         </div>
         <div *ngSwitchCase="eTipoTweet.Semanal">
             <p>Semanal</p>
-            <select [(ngModel)]="diaSemana">
+            <select [(ngModel)]="diaSemana" (change)="updateInfo()">
                 <option [ngValue]="eDiaSemana.Lunes">Lunes</option>
                 <option [ngValue]="eDiaSemana.Martes">Martes</option>
                 <option [ngValue]="eDiaSemana.Miercoles">Miércoles</option>
@@ -38,8 +38,8 @@
         </div>
         <div *ngSwitchCase="eTipoTweet.Mensual">
             <p>Mensual</p>
-            <input type="number" min="1" max="31" value="1">
-            <input type="time" value="00:00">
+            <input type="number" min="1" max="31" value="1" (change)="updateInfo()">
+            <input type="time" value="00:00" (change)="updateInfo()">
         </div>
     </div>
 </div>
