@@ -9,7 +9,6 @@ import { ListaProgramadosComponent } from './lista-programados/lista-programados
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrandingComponent } from './branding/branding.component';
 import { DetallesTweetComponent } from './detalles-tweet/detalles-tweet.component';
-import { DetallesTipoTweetComponent } from './detalles-tipo-tweet/detalles-tipo-tweet.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { LoginComponent } from './login/login.component';
     ListaProgramadosComponent,
     BrandingComponent,
     DetallesTweetComponent,
-    DetallesTipoTweetComponent,
     LoginComponent
   ],
   imports: [

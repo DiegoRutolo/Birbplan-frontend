@@ -4,7 +4,6 @@ import { Observable } from "rxjs";
 
 import { Tweet } from "../tweets";
 import { TweetService } from "../tweet.service";
-import { InfoTipoTweet } from "../info-tipo-tweet";
 import { TipoTweet } from '../tipo-tweet.enum';
 import { DiaSemana } from '../dia-semana.enum';
 
