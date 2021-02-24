@@ -40,4 +40,13 @@ describe('TweetService', () => {
     }
   );
 
+  it('#getTweet(8) no debería devolver nada',
+    (done: DoneFn) => {
+      service.getTweet(8).subscribe(val => {
+        expect(val).toBeFalsy();
+        done();
+      });
+    }
+  );
+
 });
