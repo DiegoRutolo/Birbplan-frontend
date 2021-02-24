@@ -9,8 +9,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/lista', pathMatch: 'full'},
   {path: 'lista', component: ListaProgramadosComponent},
   {path: 'detalles', component: DetallesTweetComponent},
-  {path: 'detalles/:id', component: DetallesTweetComponent}
-  //{path: 'login', component: LoginComponent}
+  {path: 'detalles/:id', component: DetallesTweetComponent},
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({

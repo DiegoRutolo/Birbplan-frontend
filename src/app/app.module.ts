@@ -4,7 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { TweetProgramadoPreviewComponent } from './tweet-programado-preview/tweet-programado-preview.component';
 import { ListaProgramadosComponent } from './lista-programados/lista-programados.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrandingComponent } from './branding/branding.component';
@@ -14,7 +13,6 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TweetProgramadoPreviewComponent,
     ListaProgramadosComponent,
     BrandingComponent,
     DetallesTweetComponent,
