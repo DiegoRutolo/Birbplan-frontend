@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { TweetService } from './tweet.service';
 import { Tweet } from './tweets';
 
-describe('TweetService', () => {
+fdescribe('TweetService', () => {
   let httpClientSpy: {get: jasmine.Spy};
   let service: TweetService;
 
